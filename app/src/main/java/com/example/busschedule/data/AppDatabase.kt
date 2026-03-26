@@ -19,9 +19,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-
+//creates room database
 @Database(entities = arrayOf(BusSchedule::class), version = 1)
 abstract class AppDatabase: RoomDatabase() {
+
+    //reference the room dao
     abstract fun busScheduleDao(): BusScheduleDao
 
     companion object {
@@ -36,8 +38,7 @@ abstract class AppDatabase: RoomDatabase() {
                     "app_database"
                 )
                     .createFromAsset("database/bus_schedule.db")
-                    // Wipes and rebuilds instead of migrating if no Migration object.
-                    // Migration is not part of this codelab.
+                    // Wipes during migration
                     .fallbackToDestructiveMigration()
                     .build()
                     .also {

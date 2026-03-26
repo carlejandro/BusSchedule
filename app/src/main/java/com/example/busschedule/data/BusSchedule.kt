@@ -26,6 +26,8 @@ import androidx.room.PrimaryKey
  * Additionally, an ID is needed as a unique identifier for
  * each row in the database.
  */
+
+// ORM
 @Entity(tableName = "Schedule")
 data class BusSchedule(
     @PrimaryKey
